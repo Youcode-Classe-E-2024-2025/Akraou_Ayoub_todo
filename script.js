@@ -112,7 +112,8 @@ function supprimerTache(id) {
 
 function obtenirStatistiques() {
 	return {
-		nTaches: tachesTodo.length,
+		nTaches: taches.length,
+		nTachesTodo: tachesTodo.length,
 		nTachesDoing: tachesDoing.length,
 		nTachesDone: tachesDone.length,
 		nTachesLowPriority: taches.filter(
