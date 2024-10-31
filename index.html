@@ -1,13 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sm:text-[14px]">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./css/output.css" />
-		<title>Document</title>
+		<link rel="stylesheet" href="./assets/css/output.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Athiti:wght@200;300;400;500;600;700&family=Life+Savers:wght@400;700;800&display=swap"
+			rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+			integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<title>ToDoList App.</title>
 	</head>
-	<body>
-		<div class="container h-screen bg-red-500 mx-auto"></div>
-		<script src="script.js"></script>
+	<body class="container max-w-5xl mx-auto py-12 px-6 font-athiti min-h-screen bg-black">
+		<header>
+			<h1 class="title text-4xl mb-6 font-lifeSaver font-black text-white">
+				ToDoList <span class="general-statistic text-3xl text-gray-50"></span>
+			</h1>
+		</header>
+		<main class="columns flex flex-col sm:flex-row gap-4 lg:gap-10 text-white">
+			<section
+				class="todo-column relative max-h-[85vh] overflow-y-scroll flex-1 h-fit rounded-lg bg-gray-700 text-white overflow-hidden scroll-hidden">
+				<div
+					class="column-header bg-gray-700 flex justify-between items-center sticky top-0 left-0 right-0 px-4 py-2">
+					<h2 class="text-3xl font-medium">
+						To do<span class="todo-number text-2xl font-sans font-normal"></span>
+					</h2>
+					<button class="add-btn">
+						<i class="add-icon fa-solid fa-plus text-2xl !font-extralight"></i>
+					</button>
+				</div>
+				<div class="todo-tasks flex flex-col gap-2 p-3 lg:p-4"></div>
+			</section>
+			<section
+				class="doing-column relative max-h-[85vh] overflow-y-scroll flex-1 h-fit rounded-lg bg-gray-700 text-white overflow-hidden scroll-hidden">
+				<h2 class="text-3xl font-medium bg-gray-700 sticky top-0 left-0 right-0 px-4 py-2">
+					Doing<span class="doing-number text-2xl font-sans font-normal"></span>
+				</h2>
+				<div class="doing-tasks flex flex-col gap-2 p-3 lg:p-4"></div>
+			</section>
+			<section
+				class="done-column relative max-h-[85vh] overflow-y-scroll flex-1 h-fit rounded-lg bg-gray-700 text-white overflow-hidden scroll-hidden">
+				<h2 class="text-3xl font-medium bg-gray-700 sticky top-0 left-0 right-0 px-4 py-2">
+					Done<span class="done-number text-2xl font-sans font-normal"></span>
+				</h2>
+				<div class="done-tasks flex flex-col gap-2 p-3 lg:p-4"></div>
+			</section>
+		</main>
+
+		<div class="form-overlay flex hidden fixed top-0 right-0 bottom-0 left-0 bg-gray-800/50">
+			<form class="relative backdrop-blur-sm bg-white m-auto w-96 px-7 py-5">
+				<button type="button" class="close-form-btn absolute top-2 right-2">
+					<i class="fa-solid fa-xmark text-3xl text-gray-800"></i>
+				</button>
+				<fieldset class="flex flex-col gap-1">
+					<div class="box">
+						<label class="text-base font-medium" for="title">titre</label>
+						<input
+							class="outline-none block border border-gray-400 border-solid rounded-sm px-2 py-1 w-full"
+							id="title"
+							type="text"
+							required />
+					</div>
+					<div class="box">
+						<label class="text-base font-medium" for="description">description</label>
+						<input
+							class="outline-none block border border-gray-400 border-solid rounded-sm px-2 py-1 w-full"
+							id="description"
+							type="text"
+							required />
+					</div>
+					<div class="box">
+						<label class="text-base font-medium" for="status">statut</label>
+						<select
+							class="outline-none block border border-gray-400 border-solid rounded-sm px-2 py-1 w-full"
+							name=""
+							id="status"
+							required>
+							<option value="to do">todo</option>
+							<option value="doing">doing</option>
+							<option value="done">done</option>
+						</select>
+					</div>
+					<div class="box">
+						<label class="text-base font-medium" for="priority">priorité</label>
+						<select
+							class="outline-none block border border-gray-400 border-solid rounded-sm px-2 py-1 w-full"
+							name=""
+							id="priority"
+							required>
+							<option value="low">low</option>
+							<option value="medium" selected>medium</option>
+							<option value="high">high</option>
+						</select>
+					</div>
+					<div class="box">
+						<label class="text-base font-medium" for="deadline">deadline</label>
+						<input
+							class="outline-none block border border-gray-400 border-solid rounded-sm px-2 py-1 w-full"
+							id="deadline"
+							type="date"
+							required />
+					</div>
+					<button class="w-full mt-1 p-2 rounded-sm bg-gray-800 text-white text-center font-bold">Ajouter</button>
+				</fieldset>
+			</form>
+		</div>
+
+		<script src="script.js" type="module"></script>
 	</body>
 </html>
