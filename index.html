@@ -19,37 +19,65 @@
 	</head>
 	<body class="container max-w-5xl mx-auto py-12 px-6 font-athiti min-h-screen bg-black">
 		<header>
-			<h1 class="title text-4xl mb-6 font-lifeSaver font-black text-white">
-				ToDoList <span class="general-statistic text-3xl text-gray-50"></span>
-			</h1>
+			<div class="box flex gap-2 items-center mb-2">
+				<h1 class="title text-3xl font-lifeSaver font-black text-white">
+					ToDoList <span class="general-statistic text-3xl text-gray-50"></span>
+				</h1>
+				<button
+					class="add-btn rounded-full px-2 py-1 text-2xl text-white border-2 border-white border-solid bg-black font-medium">
+					add
+					<i class="add-icon fa-solid fa-plus !font-extralight"></i>
+				</button>
+			</div>
+			<div class="filter-sort-btns flex gap-2 max-w-fit mx-auto mb-4">
+				<button
+					type="button"
+					data-priority="high"
+					class="text-2xl font-medium px-4 py-1 rounded-full text-white font-athiti bg-red-500 border-2 border-white border-solid flex-1">
+					high
+				</button>
+				<button
+					type="button"
+					data-priority="medium"
+					class="text-2xl font-medium px-4 py-1 rounded-full text-white font-athiti bg-amber-500 border-2 border-white border-solid flex-1">
+					medium
+				</button>
+				<button
+					type="button"
+					data-priority="low"
+					class="text-2xl font-medium px-4 py-1 rounded-full text-white font-athiti bg-green-500 border-2 border-white border-solid flex-1">
+					low
+				</button>
+				<button
+					type="button"
+					data-priority="all"
+					class="text-2xl font-medium px-4 py-1 rounded-full text-white font-athiti bg-black border-2 border-white border-solid flex-1">
+					all
+				</button>
+			</div>
 		</header>
-		<main class="columns flex flex-col sm:flex-row gap-4 lg:gap-10 text-white">
+		<main class="columns flex flex-col sm:flex-row gap-4 lg:gap-6 text-white">
 			<section
 				class="todo-column relative max-h-[85vh] overflow-y-scroll flex-1 h-fit rounded-lg bg-gray-700 text-white overflow-hidden scroll-hidden">
-				<div
-					class="column-header bg-gray-700 flex justify-between items-center sticky top-0 left-0 right-0 px-4 py-2">
-					<h2 class="text-3xl font-medium">
-						To do<span class="todo-number text-2xl font-sans font-normal"></span>
-					</h2>
-					<button class="add-btn">
-						<i class="add-icon fa-solid fa-plus text-2xl !font-extralight"></i>
-					</button>
-				</div>
-				<div class="todo-tasks flex flex-col gap-2 p-3 lg:p-4"></div>
+				<h2 class="text-3xl font-medium bg-gray-700 sticky top-0 left-0 right-0 px-4 py-2">
+					To do<span class="todo-number text-2xl font-sans font-normal"></span>
+				</h2>
+
+				<div class="todo-tasks flex flex-col gap-2 p-3 pt-0"></div>
 			</section>
 			<section
 				class="doing-column relative max-h-[85vh] overflow-y-scroll flex-1 h-fit rounded-lg bg-gray-700 text-white overflow-hidden scroll-hidden">
 				<h2 class="text-3xl font-medium bg-gray-700 sticky top-0 left-0 right-0 px-4 py-2">
 					Doing<span class="doing-number text-2xl font-sans font-normal"></span>
 				</h2>
-				<div class="doing-tasks flex flex-col gap-2 p-3 lg:p-4"></div>
+				<div class="doing-tasks flex flex-col gap-2 p-3 pt-0"></div>
 			</section>
 			<section
 				class="done-column relative max-h-[85vh] overflow-y-scroll flex-1 h-fit rounded-lg bg-gray-700 text-white overflow-hidden scroll-hidden">
 				<h2 class="text-3xl font-medium bg-gray-700 sticky top-0 left-0 right-0 px-4 py-2">
 					Done<span class="done-number text-2xl font-sans font-normal"></span>
 				</h2>
-				<div class="done-tasks flex flex-col gap-2 p-3 lg:p-4"></div>
+				<div class="done-tasks flex flex-col gap-2 p-3 pt-0"></div>
 			</section>
 		</main>
 
@@ -69,11 +97,10 @@
 					</div>
 					<div class="box">
 						<label class="text-base font-medium" for="description">description</label>
-						<input
+						<textarea
 							class="outline-none block border border-gray-400 border-solid rounded-sm px-2 py-1 w-full"
 							id="description"
-							type="text"
-							required />
+							required></textarea>
 					</div>
 					<div class="box">
 						<label class="text-base font-medium" for="status">statut</label>
@@ -82,7 +109,7 @@
 							name=""
 							id="status"
 							required>
-							<option value="to do">todo</option>
+							<option value="todo">todo</option>
 							<option value="doing">doing</option>
 							<option value="done">done</option>
 						</select>
@@ -107,11 +134,13 @@
 							type="date"
 							required />
 					</div>
-					<button class="w-full mt-1 p-2 rounded-sm bg-gray-800 text-white text-center font-bold">Ajouter</button>
+					<button class="submit-btn w-full mt-1 p-2 rounded-sm bg-gray-800 text-white text-center font-bold">
+						Ajouter
+					</button>
 				</fieldset>
 			</form>
 		</div>
 
-		<script src="script.js" type="module"></script>
+		<script src="script.js" type="module" defer></script>
 	</body>
 </html>
