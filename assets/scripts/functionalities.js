@@ -1,5 +1,6 @@
 import taches from "./data.js";
 import TacheComponent from "../components/Tache.js";
+import TacheDetails from "../components/TacheDetails.js";
 
 export function updateUI(tasks) {
 	// creation du ToDoColumn
@@ -22,11 +23,12 @@ export function updateUI(tasks) {
 
 	// afficher le nombre des taches selon les status
 	document.querySelector(".general-statistic").textContent = `(${tachesDone.length}/${tasks.length})`;
-	// afficher le nombre des taches selon les status
 	document.querySelector(".todo-number").textContent = `(${tachesTodo.length})`;
 	document.querySelector(".doing-number").textContent = `(${tachesDoing.length})`;
 	document.querySelector(".done-number").textContent = `(${tachesDone.length})`;
 }
+
+///////////// form handling functionalities /////////////
 
 const formContainer = document.querySelector(".form-overlay");
 const form = document.querySelector(".form-overlay form");
@@ -55,7 +57,7 @@ export function getFormData() {
 	const status = document.getElementById("status").value;
 	const priority = document.getElementById("priority").value;
 	const deadline = document.getElementById("deadline").value;
-	const id = submitBtn.textContent.toLocaleLowerCase() == "ajouter" ? taches.length + 1 : Number(form.id);
+	const id = submitBtn.textContent.toLocaleLowerCase() == "ajouter" ? Date.now() : Number(form.id);
 	return { id, title, description, status, priority, deadline };
 }
 
@@ -76,6 +78,8 @@ export function openEditForm(event) {
 	showForm();
 }
 window.openEditForm = openEditForm;
+
+///////////// main functionalities (CRUD) /////////////
 
 export function ajouterTache(event) {
 	event.preventDefault();
@@ -100,3 +104,17 @@ export function supprimerTache(event) {
 	updateUI(taches);
 }
 window.supprimerTache = supprimerTache;
+
+export function openTaskDetails(element, event) {
+	const editBtnClicked = Boolean(event.target.closest(".edit-btn"));
+	const deleteBtnClicked = Boolean(event.target.closest(".delete-btn"));
+	if (editBtnClicked || deleteBtnClicked) return;
+	const tacheId = element.id;
+	const tache = taches.find((tache) => tache.id == tacheId);
+	document.body.insertAdjacentHTML("beforeend", TacheDetails(tache));
+	const taskDetailsContainer = document.querySelector(".task-details");
+	taskDetailsContainer.addEventListener("click", function (e) {
+		if (e.target === this || e.target.classList.contains("delete-icon")) taskDetailsContainer.remove();
+	});
+}
+window.openTaskDetails = openTaskDetails;

@@ -17,14 +17,15 @@
 			referrerpolicy="no-referrer" />
 		<title>ToDoList App.</title>
 	</head>
-	<body class="container max-w-5xl mx-auto py-12 px-6 font-athiti min-h-screen bg-black">
+	<body
+		class="container max-w-5xl mx-auto py-6 sm:py-8 lg:py-12 px-2 sm:px-4 lg:px-6 font-athiti min-h-screen bg-black">
 		<header>
 			<div class="box flex gap-2 items-center mb-2">
-				<h1 class="title text-3xl font-lifeSaver font-black text-white">
-					ToDoList <span class="general-statistic text-3xl text-gray-50"></span>
+				<h1 class="title text-2xl sm:text-3xl font-lifeSaver font-black text-white">
+					ToDoList <span class="general-statistic text-2xl sm:text-3xl text-gray-50"></span>
 				</h1>
 				<button
-					class="add-btn rounded-full px-2 py-1 text-2xl text-white border-2 border-white border-solid bg-black font-medium">
+					class="add-btn rounded-full px-2 py-0.5 sm:py-1 text-xl sm:text-2xl text-white border-2 border-white border-solid bg-black font-medium">
 					add
 					<i class="add-icon fa-solid fa-plus !font-extralight"></i>
 				</button>
@@ -33,25 +34,25 @@
 				<button
 					type="button"
 					data-priority="high"
-					class="text-2xl font-medium px-4 py-1 rounded-full text-white font-athiti bg-red-500 border-2 border-white border-solid flex-1">
+					class="text-xl sm:text-2xl font-medium px-2 sm:px-4 py-0.5 sm:py-1 rounded-full text-white font-athiti bg-red-500 border-2 border-white border-solid flex-1">
 					high
 				</button>
 				<button
 					type="button"
 					data-priority="medium"
-					class="text-2xl font-medium px-4 py-1 rounded-full text-white font-athiti bg-amber-500 border-2 border-white border-solid flex-1">
+					class="text-xl sm:text-2xl font-medium px-2 sm:px-4 py-0.5 sm:py-1 rounded-full text-white font-athiti bg-amber-500 border-2 border-white border-solid flex-1">
 					medium
 				</button>
 				<button
 					type="button"
 					data-priority="low"
-					class="text-2xl font-medium px-4 py-1 rounded-full text-white font-athiti bg-green-500 border-2 border-white border-solid flex-1">
+					class="text-xl sm:text-2xl font-medium px-2 sm:px-4 py-0.5 sm:py-1 rounded-full text-white font-athiti bg-green-500 border-2 border-white border-solid flex-1">
 					low
 				</button>
 				<button
 					type="button"
 					data-priority="all"
-					class="text-2xl font-medium px-4 py-1 rounded-full text-white font-athiti bg-black border-2 border-white border-solid flex-1">
+					class="text-xl sm:text-2xl font-medium px-2 sm:px-4 py-0.5 sm:py-1 rounded-full text-white font-athiti bg-black border-2 border-white border-solid flex-1">
 					all
 				</button>
 			</div>
@@ -81,31 +82,32 @@
 			</section>
 		</main>
 
-		<div class="form-overlay flex hidden fixed top-0 right-0 bottom-0 left-0 bg-gray-800/50">
-			<form class="relative backdrop-blur-sm bg-white m-auto w-96 px-7 py-5">
+		<div
+			class="form-overlay flex hidden fixed top-0 right-0 bottom-0 left-0 bg-gray-800/50 px-6 py-4 overflow-y-scroll">
+			<form class="relative backdrop-blur-sm bg-white m-auto w-full max-w-96 px-4 sm:px-7 py-3 sm:py-5">
 				<button type="button" class="close-form-btn absolute top-2 right-2">
 					<i class="fa-solid fa-xmark text-3xl text-gray-800"></i>
 				</button>
 				<fieldset class="flex flex-col gap-1">
 					<div class="box">
-						<label class="text-base font-medium" for="title">titre</label>
+						<label class="text-sm sm:text-base font-medium" for="title">titre</label>
 						<input
-							class="outline-none block border border-gray-400 border-solid rounded-sm px-2 py-1 w-full"
+							class="text-sm sm:text-base outline-none block border border-gray-400 border-solid rounded-sm px-2 py-1 w-full"
 							id="title"
 							type="text"
 							required />
 					</div>
 					<div class="box">
-						<label class="text-base font-medium" for="description">description</label>
+						<label class="text-sm sm:text-base font-medium" for="description">description</label>
 						<textarea
-							class="outline-none block border border-gray-400 border-solid rounded-sm px-2 py-1 w-full"
+							class="text-sm sm:text-base outline-none block border border-gray-400 border-solid rounded-sm px-2 py-1 w-full"
 							id="description"
 							required></textarea>
 					</div>
 					<div class="box">
-						<label class="text-base font-medium" for="status">statut</label>
+						<label class="text-sm sm:text-base font-medium" for="status">statut</label>
 						<select
-							class="outline-none block border border-gray-400 border-solid rounded-sm px-2 py-1 w-full"
+							class="text-sm sm:text-base outline-none block border border-gray-400 border-solid rounded-sm px-2 py-1 w-full"
 							name=""
 							id="status"
 							required>
@@ -115,9 +117,9 @@
 						</select>
 					</div>
 					<div class="box">
-						<label class="text-base font-medium" for="priority">priorité</label>
+						<label class="text-sm sm:text-base font-medium" for="priority">priorité</label>
 						<select
-							class="outline-none block border border-gray-400 border-solid rounded-sm px-2 py-1 w-full"
+							class="text-sm sm:text-base outline-none block border border-gray-400 border-solid rounded-sm px-2 py-1 w-full"
 							name=""
 							id="priority"
 							required>
@@ -127,20 +129,27 @@
 						</select>
 					</div>
 					<div class="box">
-						<label class="text-base font-medium" for="deadline">deadline</label>
-						<input
-							class="outline-none block border border-gray-400 border-solid rounded-sm px-2 py-1 w-full"
-							id="deadline"
-							type="date"
-							required />
+						<label class="text-sm sm:text-base font-medium" for="deadline">deadline</label>
+						<div class="flex">
+							<input
+								class="date text-sm sm:text-base outline-none block border border-gray-400 border-solid rounded-sm px-2 py-1 w-full"
+								id="deadline"
+								type="date"
+								required />
+							<input
+								class="time text-sm sm:text-base outline-none block border border-gray-400 border-solid rounded-sm px-2 py-1 w-full"
+								type="time"
+								name="deadline"
+								id="deadline" />
+						</div>
 					</div>
-					<button class="submit-btn w-full mt-1 p-2 rounded-sm bg-gray-800 text-white text-center font-bold">
+					<button
+						class="submit-btn text-sm sm:text-base w-full mt-1 p-2 rounded-sm bg-gray-800 text-white text-center font-bold">
 						Ajouter
 					</button>
 				</fieldset>
 			</form>
 		</div>
-
-		<script src="script.js" type="module" defer></script>
 	</body>
+	<script src="script.js" type="module" defer></script>
 </html>

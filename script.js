@@ -8,8 +8,10 @@ import {
 	openEditForm,
 	modifierTache,
 	supprimerTache,
+	openTaskDetails,
 } from "./assets/scripts/functionalities.js";
 import taches from "./assets/scripts/data.js";
+import TacheDetails from "./assets/components/TacheDetails.js";
 
 updateUI(taches);
 

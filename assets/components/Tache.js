@@ -2,6 +2,7 @@ export default function TacheComponent(tache) {
 	const backgroundColor =
 		tache?.priority == "high" ? "bg-red-500" : tache?.priority == "medium" ? "bg-amber-500" : "bg-green-500";
 	return `<div id=${tache?.id}
+	onclick="openTaskDetails(this,event)"
 					class="task ${backgroundColor} hover:scale-105 cursor-pointer transition-all rounded-md px-2 py-2">
 					<div class="task-header max-w-fit flex items-start gap-3 ml-auto">
 					<button class="edit-btn" onclick="openEditForm(event)">
