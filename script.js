@@ -1,3 +1,4 @@
+// import ConfettiGenerator from "confetti-js";
 import {
 	updateUI,
 	ajouterTache,
@@ -12,6 +13,10 @@ import {
 } from "./assets/scripts/functionalities.js";
 import taches from "./assets/scripts/data.js";
 import TacheDetails from "./assets/components/TacheDetails.js";
+
+var confettiSettings = { target: "congratulation" };
+var confetti = new ConfettiGenerator(confettiSettings);
+confetti.render();
 
 updateUI(taches);
 

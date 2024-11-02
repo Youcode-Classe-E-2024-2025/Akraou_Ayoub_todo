@@ -26,6 +26,13 @@ export function updateUI(tasks) {
 	document.querySelector(".todo-number").textContent = `(${tachesTodo.length})`;
 	document.querySelector(".doing-number").textContent = `(${tachesDoing.length})`;
 	document.querySelector(".done-number").textContent = `(${tachesDone.length})`;
+	// if the user finished all tasks display Confetti effect
+	if (tachesDone.length === taches.length) {
+		document.querySelector("#congratulation").classList.remove("hidden");
+		setTimeout(function () {
+			document.querySelector("#congratulation").classList.add("hidden");
+		}, 3000);
+	}
 }
 
 ///////////// form handling functionalities /////////////
