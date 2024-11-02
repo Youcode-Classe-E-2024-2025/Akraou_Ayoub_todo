@@ -97,6 +97,7 @@ window.openEditForm = openEditForm;
 export function ajouterTache(event) {
 	event.preventDefault();
 	const tache = getFormData();
+
 	taches.push(tache);
 	hideForm();
 	updateUI(taches);
