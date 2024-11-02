@@ -711,6 +711,10 @@ video {
   flex: 1 1 0%;
 }
 
+.flex-\[2\] {
+  flex: 2;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }

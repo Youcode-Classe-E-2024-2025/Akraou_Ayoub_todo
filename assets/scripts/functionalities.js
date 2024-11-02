@@ -33,6 +33,13 @@ export function updateUI(tasks) {
 const formContainer = document.querySelector(".form-overlay");
 const form = document.querySelector(".form-overlay form");
 const submitBtn = document.querySelector(".submit-btn");
+// select input
+const title = document.getElementById("title");
+const description = document.getElementById("description");
+const status = document.getElementById("status");
+const priority = document.getElementById("priority");
+const date = document.querySelector("form .date");
+const time = document.querySelector("form .time");
 
 export function showForm() {
 	formContainer.classList.remove("hidden");
@@ -46,27 +53,33 @@ export function hideForm() {
 }
 
 export function resetForm() {
-	document.getElementById("title").value = "";
-	document.getElementById("description").value = "";
-	document.getElementById("deadline").value = "";
+	title.value = "";
+	description.value = "";
+	date.value = "";
+	time.value = "";
 }
 
 export function getFormData() {
-	const title = document.getElementById("title").value;
-	const description = document.getElementById("description").value;
-	const status = document.getElementById("status").value;
-	const priority = document.getElementById("priority").value;
-	const deadline = document.getElementById("deadline").value;
 	const id = submitBtn.textContent.toLocaleLowerCase() == "ajouter" ? Date.now() : Number(form.id);
-	return { id, title, description, status, priority, deadline };
+	const tache = {
+		title: title.value,
+		description: description.value,
+		status: status.value,
+		priority: priority.value,
+		deadline: { date: date.value, time: time.value },
+		id,
+	};
+
+	return tache;
 }
 
 export function fillFormInputs(tache) {
-	document.getElementById("title").value = tache.title;
-	document.getElementById("description").value = tache.description;
-	document.getElementById("status").value = tache.status;
-	document.getElementById("priority").value = tache.priority;
-	document.getElementById("deadline").value = tache.deadline;
+	title.value = tache.title;
+	description.value = tache.description;
+	status.value = tache.status;
+	priority.value = tache.priority;
+	date.value = tache.deadline.date;
+	time.value = tache.deadline.time;
 	document.querySelector(".form-overlay form").id = tache.id;
 }
 

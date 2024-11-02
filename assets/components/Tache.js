@@ -17,6 +17,6 @@ export default function TacheComponent(tache) {
 						class="task-description hidden lg:block text-base leading-normal max-h-[calc(1.5*16px*2)] text-nowrap overflow-hidden text-ellipsis">
 						${tache?.description}
 					</p>
-					<p class="deadline text-sm font-medium text-gray-50 text-right">12/02/2024</p>
+					<p class="deadline text-sm font-medium text-gray-50 text-right">${tache.deadline.date} ${tache.deadline.time}</p>
 				</div>`;
 }

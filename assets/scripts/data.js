@@ -5,7 +5,7 @@ export default [
 		description:
 			"Créer des diapositives de haute qualité pour la prochaine réunion d'équipe. Les diapositives doivent inclure un aperçu des projets en cours, des objectifs à venir, et des métriques de performance clés pour informer toute l'équipe.",
 		status: "todo",
-		deadline: "2024-11-01",
+		deadline: { date: "2024-11-01", time: "10:00" },
 		priority: "high",
 	},
 	{
@@ -14,7 +14,7 @@ export default [
 		description:
 			"Vérifier minutieusement le code de la nouvelle fonctionnalité ajoutée pour s'assurer qu'il respecte les standards de qualité et ne comporte pas de bugs potentiels. Ajouter des commentaires constructifs si nécessaire.",
 		status: "doing",
-		deadline: "2024-11-03",
+		deadline: { date: "2024-11-03", time: "14:00" },
 		priority: "medium",
 	},
 	{
@@ -23,7 +23,7 @@ export default [
 		description:
 			"Après la réunion avec les clients, envoyer des emails de suivi pour résumer les points discutés, clarifier les besoins et confirmer les prochaines étapes. Assurer une communication claire et professionnelle.",
 		status: "todo",
-		deadline: "2024-11-05",
+		deadline: { date: "2024-11-05", time: "16:30" },
 		priority: "low",
 	},
 	{
@@ -32,7 +32,7 @@ export default [
 		description:
 			"Ajouter des informations détaillées sur les nouvelles fonctionnalités dans la documentation de l'application pour que toute l'équipe de développement et les utilisateurs finaux aient une référence claire.",
 		status: "done",
-		deadline: "2024-10-28",
+		deadline: { date: "2024-10-28", time: "09:00" },
 		priority: "high",
 	},
 	{
@@ -41,7 +41,7 @@ export default [
 		description:
 			"Préparer les éléments à discuter pour la réunion avec le client, notamment les besoins spécifiques et les spécifications techniques pour le nouveau projet. Prendre des notes sur les retours du client.",
 		status: "todo",
-		deadline: "2024-11-07",
+		deadline: { date: "2024-11-07", time: "11:00" },
 		priority: "high",
 	},
 	{
@@ -50,7 +50,7 @@ export default [
 		description:
 			"Effectuer des tests de régression pour garantir que les nouvelles modifications n'ont pas introduit de bugs dans l'application mobile existante. Documenter les résultats et signaler les problèmes éventuels.",
 		status: "doing",
-		deadline: "2024-11-04",
+		deadline: { date: "2024-11-04", time: "15:00" },
 		priority: "medium",
 	},
 	{
@@ -59,7 +59,7 @@ export default [
 		description:
 			"Analyser la base de données pour identifier et supprimer les données obsolètes, tout en vérifiant l'intégrité des données existantes. Assurer la sécurité et la performance de la base de données.",
 		status: "done",
-		deadline: "2024-10-25",
+		deadline: { date: "2024-10-25", time: "08:30" },
 		priority: "low",
 	},
 	{
@@ -68,7 +68,7 @@ export default [
 		description:
 			"Préparer un rapport détaillé pour la direction, incluant les performances du trimestre, les budgets utilisés, et les progrès des projets. Fournir des recommandations pour les prochaines étapes.",
 		status: "todo",
-		deadline: "2024-11-08",
+		deadline: { date: "2024-11-08", time: "17:00" },
 		priority: "medium",
 	},
 	{
@@ -77,7 +77,7 @@ export default [
 		description:
 			"Ajouter de nouvelles informations, telles que les mises à jour de produits et les actualités de l'entreprise, au site web pour que les visiteurs aient accès aux informations les plus récentes.",
 		status: "doing",
-		deadline: "2024-11-06",
+		deadline: { date: "2024-11-06", time: "13:00" },
 		priority: "high",
 	},
 	{
@@ -86,7 +86,7 @@ export default [
 		description:
 			"Analyser les dépenses actuelles et ajuster le budget du projet pour les prochaines phases. Préparer un document de révision du budget pour s'assurer que les fonds sont alloués de manière optimale.",
 		status: "todo",
-		deadline: "2024-11-10",
+		deadline: { date: "2024-11-10", time: "09:30" },
 		priority: "medium",
 	},
 ];
